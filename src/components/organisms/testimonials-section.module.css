@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-9);
+}
+
+.scrollContainer {
+  overflow-x: auto;
+  padding-bottom: var(--space-4);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-bg-tertiary) transparent;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+.track {
+  display: flex;
+  gap: var(--space-5);
+  padding-inline: var(--space-1);
+}

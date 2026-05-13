@@ -1,0 +1,37 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-6));
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 400px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .header {
+    position: static;
+    text-align: center;
+    align-items: center;
+  }
+}

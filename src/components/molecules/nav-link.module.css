@@ -1,0 +1,37 @@
+.link {
+  position: relative;
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  transition: color var(--duration-normal) var(--ease-out-expo);
+}
+
+.link:hover {
+  color: var(--color-text-primary);
+}
+
+.indicator {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 20px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.link:hover .indicator {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.active {
+  color: var(--color-text-primary);
+}
+
+.active .indicator {
+  transform: translateX(-50%) scaleX(1);
+}

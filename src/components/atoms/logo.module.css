@@ -1,0 +1,26 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: opacity var(--duration-normal);
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.hash {
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 1.7rem;
+}
+
+.text {
+  color: var(--color-text-primary);
+}

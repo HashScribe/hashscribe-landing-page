@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-9);
+}
+
+.marqueeWrapper {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  margin-bottom: var(--space-4);
+}
+
+.marquee {
+  display: flex;
+  gap: var(--space-4);
+  animation: marquee 40s linear infinite;
+  width: max-content;
+}
+
+.marqueeReverse {
+  animation-direction: reverse;
+  animation-duration: 45s;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
