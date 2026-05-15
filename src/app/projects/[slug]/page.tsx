@@ -4,9 +4,9 @@ import { getProjectBySlug, getProjectSlugs } from '@/lib/api';
 import { Badge } from '@/components/atoms/badge';
 import { Heading } from '@/components/atoms/heading';
 import { Text } from '@/components/atoms/text';
-import { Button } from '@/components/atoms/button';
 import { SectionWrapper } from '@/components/atoms/section-wrapper';
 import { CtaBanner } from '@/components/organisms/cta-banner';
+import { cn } from '@/lib/utils';
 import styles from './project-detail.module.css';
 
 interface ProjectPageProps {
@@ -37,34 +37,45 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <>
-      {/* Hero */}
+      {/* Cinematic Hero Banner — clean, just title + back button */}
+      <div className={styles.heroBanner}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={project.bannerUrl} alt={project.title} className={styles.bannerImage} />
+        <div className={styles.heroOverlay} />
+
+        <a href="/projects" className={styles.backCircle} aria-label="Back to Projects">
+          ←
+        </a>
+
+        <div className={cn('container', styles.heroContent)}>
+          <Heading as="h1" size="display" className={styles.heroTitle}>{project.title}</Heading>
+        </div>
+      </div>
+
+      {/* Project Info — metadata strip */}
       <SectionWrapper>
-        <div className={styles.hero}>
-          <div className={styles.breadcrumb}>
-            <Button variant="ghost" size="sm" href="/projects">
-              ← Back to Projects
-            </Button>
+        <div className={styles.projectInfo}>
+          <div className={styles.infoMeta}>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>Category</span>
+              <Badge variant="primary">{project.category}</Badge>
+            </div>
+            {project.timeline && (
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Timeline</span>
+                <Badge variant="default">{project.timeline}</Badge>
+              </div>
+            )}
+            {project.clientName && (
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Client</span>
+                <span className={styles.infoValue}>{project.clientName}</span>
+              </div>
+            )}
           </div>
-          <div className={styles.heroMeta}>
-            <Badge variant="primary">{project.category}</Badge>
-            {project.timeline && <Badge variant="default">{project.timeline}</Badge>}
-          </div>
-          <Heading as="h1" size="h1">{project.title}</Heading>
-          <Text size="lg" color="secondary" className={styles.heroDescription}>
+          <Text size="lg" color="secondary" className={styles.infoDescription}>
             {project.description}
           </Text>
-          {project.clientName && (
-            <Text size="sm" color="muted">
-              Client: {project.clientName}
-            </Text>
-          )}
-        </div>
-      </SectionWrapper>
-
-      {/* Banner */}
-      <SectionWrapper>
-        <div className={styles.banner} style={{ background: `linear-gradient(135deg, #1a1a2e, #16213e)` }}>
-          <span className={styles.bannerLetter}>{project.title.charAt(0)}</span>
         </div>
       </SectionWrapper>
 
@@ -72,12 +83,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       <SectionWrapper>
         <div className={styles.twoCol}>
           <div className={styles.block}>
-            <Badge variant="outline">The Problem</Badge>
+            <span className="eyebrow">The Problem</span>
             <Heading as="h2" size="h3">Challenge</Heading>
             <Text color="secondary">{project.problem}</Text>
           </div>
           <div className={styles.block}>
-            <Badge variant="primary">Our Solution</Badge>
+            <span className="eyebrow">Our Solution</span>
             <Heading as="h2" size="h3">Approach</Heading>
             <Text color="secondary">{project.solution}</Text>
           </div>
@@ -102,7 +113,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       {project.results && (
         <SectionWrapper>
           <div className={styles.results}>
-            <Badge variant="primary">Results</Badge>
+            <span className="eyebrow">Results</span>
             <Heading as="h2" size="h3">Impact</Heading>
             <Text size="lg" color="secondary">{project.results}</Text>
           </div>

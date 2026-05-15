@@ -18,10 +18,10 @@ export function HeroSection() {
       <div className={styles.glowOrb2} />
 
       <div className={cn('container', styles.content, isVisible && styles.visible)}>
-        <Badge variant="primary" className={styles.badge}>
+        <span className="eyebrow">
           <span className={styles.pulse} />
           Software Studio
-        </Badge>
+        </span>
 
         <Heading as="h1" size="display" className={styles.heading}>
           We Build Digital{' '}

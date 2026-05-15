@@ -10,7 +10,7 @@ export const projects: Project[] = [
     solution: 'We built FinFlow with a mobile-first approach, featuring an intuitive dashboard that consolidates all financial accounts into a single view. Smart categorization powered by ML automatically tags transactions, while predictive analytics help users understand their spending patterns. The real-time notification system keeps users informed about every transaction.',
     category: 'mobile',
     thumbnailUrl: '/images/projects/finflow-thumb.webp',
-    bannerUrl: '/images/projects/finflow-banner.webp',
+    bannerUrl: '/images/projects/medy-ping/sc-1.png',
     screenshots: [
       '/images/projects/finflow-1.webp',
       '/images/projects/finflow-2.webp',
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     solution: 'MediSync unifies the entire healthcare workflow into a single platform. We implemented HIPAA-compliant video consultations, real-time appointment management with smart waitlisting, and a unified patient portal. The system integrates with existing EHR systems via FHIR APIs, ensuring zero data loss during migration.',
     category: 'fullstack',
     thumbnailUrl: '/images/projects/medisync-thumb.webp',
-    bannerUrl: '/images/projects/medisync-banner.webp',
+    bannerUrl: '/images/projects/medisync-banner.png',
     screenshots: [
       '/images/projects/medisync-1.webp',
       '/images/projects/medisync-2.webp',
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     solution: 'We created TaskForge with engineering teams at the core. The platform features native Git integration, automated sprint velocity tracking, and intelligent task suggestions based on team capacity. Real-time collaboration with live cursors and inline code snippets makes standups and planning sessions seamless.',
     category: 'web',
     thumbnailUrl: '/images/projects/taskforge-thumb.webp',
-    bannerUrl: '/images/projects/taskforge-banner.webp',
+    bannerUrl: '/images/projects/taskforge-banner.png',
     screenshots: [
       '/images/projects/taskforge-1.webp',
       '/images/projects/taskforge-2.webp',

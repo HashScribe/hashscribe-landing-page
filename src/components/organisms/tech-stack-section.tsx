@@ -1,6 +1,6 @@
 import { SectionWrapper } from '@/components/atoms/section-wrapper';
 import { Heading } from '@/components/atoms/heading';
-import { Badge } from '@/components/atoms/badge';
+
 import { TechBadge } from '@/components/molecules/tech-badge';
 import { techStack } from '@/data/tech-stack';
 import styles from './tech-stack-section.module.css';
@@ -11,7 +11,7 @@ export function TechStackSection() {
   return (
     <SectionWrapper id="tech-stack">
       <div className={styles.header}>
-        <Badge variant="primary">Tech Stack</Badge>
+        <span className="eyebrow">Tech Stack</span>
         <Heading as="h2" size="h2">
           Technologies We <span className="gradient-text">Master</span>
         </Heading>

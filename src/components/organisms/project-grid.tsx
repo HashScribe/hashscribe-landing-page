@@ -3,7 +3,7 @@
 import { SectionWrapper } from '@/components/atoms/section-wrapper';
 import { Heading } from '@/components/atoms/heading';
 import { Text } from '@/components/atoms/text';
-import { Badge } from '@/components/atoms/badge';
+
 import { ProjectCard } from '@/components/molecules/project-card';
 import { projects } from '@/data/projects';
 import { useState } from 'react';
@@ -21,7 +21,7 @@ export function ProjectGrid() {
   return (
     <SectionWrapper>
       <div className={styles.header}>
-        <Badge variant="primary">Portfolio</Badge>
+        <span className="eyebrow">Portfolio</span>
         <Heading as="h1" size="h1">
           Our <span className="gradient-text">Projects</span>
         </Heading>

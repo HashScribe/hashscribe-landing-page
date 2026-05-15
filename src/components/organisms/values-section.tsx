@@ -1,6 +1,6 @@
 import { SectionWrapper } from '@/components/atoms/section-wrapper';
 import { Heading } from '@/components/atoms/heading';
-import { Badge } from '@/components/atoms/badge';
+
 import { Text } from '@/components/atoms/text';
 import { Icon } from '@/components/atoms/icon';
 import styles from './values-section.module.css';
@@ -16,7 +16,7 @@ export function ValuesSection() {
   return (
     <SectionWrapper>
       <div className={styles.header}>
-        <Badge variant="primary">Our Values</Badge>
+        <span className="eyebrow">Our Values</span>
         <Heading as="h2" size="h2">
           What <span className="gradient-text">Drives</span> Us
         </Heading>

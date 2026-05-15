@@ -1,7 +1,7 @@
 import { SectionWrapper } from '@/components/atoms/section-wrapper';
 import { Heading } from '@/components/atoms/heading';
 import { Text } from '@/components/atoms/text';
-import { Badge } from '@/components/atoms/badge';
+
 import { ProcessStep } from '@/components/molecules/process-step';
 import styles from './process-section.module.css';
 
@@ -17,7 +17,7 @@ export function ProcessSection() {
     <SectionWrapper id="process">
       <div className={styles.layout}>
         <div className={styles.header}>
-          <Badge variant="primary">Our Process</Badge>
+          <span className="eyebrow">Our Process</span>
           <Heading as="h2" size="h2">
             How We <span className="gradient-text">Work</span>
           </Heading>

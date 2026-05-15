@@ -1,7 +1,7 @@
 import { SectionWrapper } from '@/components/atoms/section-wrapper';
 import { Heading } from '@/components/atoms/heading';
 import { Text } from '@/components/atoms/text';
-import { Badge } from '@/components/atoms/badge';
+
 import { Button } from '@/components/atoms/button';
 import { ProjectCard } from '@/components/molecules/project-card';
 import { projects } from '@/data/projects';
@@ -13,7 +13,7 @@ export function FeaturedProjects() {
   return (
     <SectionWrapper id="projects">
       <div className={styles.header}>
-        <Badge variant="primary">Our Work</Badge>
+        <span className="eyebrow">Our Work</span>
         <Heading as="h2" size="h2">
           Featured <span className="gradient-text">Projects</span>
         </Heading>
