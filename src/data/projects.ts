@@ -157,6 +157,7 @@ export const projects: Project[] = [
       "PostgreSQL",
       "WebSocket",
       "AWS S3",
+      "AWS Lambda",
     ],
     clientName: "LearnHub Education",
     timeline: "9 months",
