@@ -68,135 +68,54 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    slug: "taskforge-project-management",
-    title: "TaskForge — Agile Project Management",
+    slug: "nexora-ai-crm",
+    title: "Nexora AI CRM",
     description:
-      "A modern project management tool built for engineering teams, featuring real-time collaboration, sprint planning, and automated workflows.",
+      "An AI-powered customer relationship management platform designed for modern businesses to manage leads, automate communication, and gain actionable sales insights through intelligent workflows.",
+
     problem:
-      "Existing project management tools were either too simplistic for complex engineering workflows or too bloated with features that slowed teams down. Engineering managers needed a tool that understood agile methodologies natively and integrated with their development pipeline.",
+      "Small and medium-sized businesses were struggling with fragmented customer communication across WhatsApp, email, and social platforms. Sales teams manually tracked leads using spreadsheets, resulting in lost opportunities, delayed follow-ups, and poor customer engagement. Existing CRM solutions were either too expensive, overly complex, or lacked automation tailored for fast-moving businesses.",
+
     solution:
-      "We created TaskForge with engineering teams at the core. The platform features native Git integration, automated sprint velocity tracking, and intelligent task suggestions based on team capacity. Real-time collaboration with live cursors and inline code snippets makes standups and planning sessions seamless.",
-    category: "web",
-    thumbnailUrl: "/images/projects/taskforge-thumb.webp",
-    bannerUrl: "/images/projects/taskforge-banner.png",
+      "Nexora AI CRM centralizes customer interactions into a single intelligent platform. The system provides AI-generated email and WhatsApp responses, smart lead prioritization, automated follow-up workflows, and real-time analytics dashboards. Businesses can track their sales pipeline, monitor customer engagement, and automate repetitive communication tasks while maintaining a personalized customer experience.",
+
+    category: "fullstack",
+
+    thumbnailUrl: "/images/projects/nexora/cover.png",
+
+    bannerUrl: "/images/projects/nexora/cover.png",
+
     screenshots: [
-      "/images/projects/taskforge-1.webp",
-      "/images/projects/taskforge-2.webp",
-      "/images/projects/taskforge-3.webp",
+      "/images/projects/nexora-dashboard.webp",
+      "/images/projects/nexora-leads.webp",
+      "/images/projects/nexora-analytics.webp",
     ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "GraphQL",
-      "PostgreSQL",
-      "Redis",
-      "Kubernetes",
-    ],
-    clientName: "TaskForge Labs",
-    timeline: "5 months",
-    results:
-      "10K+ active teams, 28% improvement in sprint completion rates, 95% customer satisfaction.",
-    featured: true,
-    publishedAt: "2025-06-10",
-  },
-  {
-    id: 4,
-    slug: "savora-food-delivery",
-    title: "Savora — Food Delivery Reimagined",
-    description:
-      "A premium food delivery application with real-time order tracking, AI-powered recommendations, and a seamless ordering experience.",
-    problem:
-      "The food delivery market was saturated with apps that offered poor UI, inaccurate delivery estimates, and generic restaurant recommendations. Restaurant partners were frustrated with high commission rates and limited control over their brand presentation.",
-    solution:
-      "Savora puts quality first with curated restaurant partnerships and a beautiful, brand-forward interface for each vendor. Our AI recommendation engine learns user preferences over time, while the real-time tracking system provides accurate ETAs using traffic and preparation data. Restaurant partners get a powerful dashboard with analytics and brand customization.",
-    category: "mobile",
-    thumbnailUrl: "/images/projects/savora-thumb.webp",
-    bannerUrl: "/images/projects/savora-banner.webp",
-    screenshots: [
-      "/images/projects/savora-1.webp",
-      "/images/projects/savora-2.webp",
-      "/images/projects/savora-3.webp",
-    ],
-    techStack: [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "Node.js",
-      "Google Maps API",
-      "Stripe",
-    ],
-    clientName: "Savora Technologies",
-    timeline: "7 months",
-    results:
-      "100K+ orders processed, 4.7★ average rating, 60% repeat order rate.",
-    featured: false,
-    publishedAt: "2025-04-05",
-  },
-  {
-    id: 5,
-    slug: "learnhub-education-platform",
-    title: "LearnHub — E-Learning Platform",
-    description:
-      "An interactive e-learning platform with live classes, course marketplaces, and progress tracking for students and educators.",
-    problem:
-      "Online education platforms were either too focused on pre-recorded content with no interaction, or expensive enterprise solutions that small educators could not afford. Students lacked engagement tools and educators had limited monetization options.",
-    solution:
-      "LearnHub bridges the gap with a hybrid learning model. Live interactive classes with breakout rooms, collaborative whiteboards, and real-time quizzes keep students engaged. Educators get a full suite of tools — course builder, analytics, and flexible pricing models. The marketplace enables discovery through smart algorithms.",
-    category: "web",
-    thumbnailUrl: "/images/projects/learnhub-thumb.webp",
-    bannerUrl: "/images/projects/learnhub-banner.webp",
-    screenshots: [
-      "/images/projects/learnhub-1.webp",
-      "/images/projects/learnhub-2.webp",
-      "/images/projects/learnhub-3.webp",
-    ],
+
     techStack: [
       "Next.js",
-      "TypeScript",
-      "Strapi",
-      "PostgreSQL",
-      "WebSocket",
-      "AWS S3",
-      "AWS Lambda",
-    ],
-    clientName: "LearnHub Education",
-    timeline: "9 months",
-    results:
-      "5K+ courses published, 50K+ active learners, 89% course completion rate.",
-    featured: false,
-    publishedAt: "2025-02-18",
-  },
-  {
-    id: 6,
-    slug: "urbannest-real-estate",
-    title: "UrbanNest — Smart Real Estate",
-    description:
-      "A modern real estate platform with virtual property tours, AI-powered price predictions, and streamlined buyer-seller communication.",
-    category: "fullstack",
-    problem:
-      "The real estate buying process was opaque and stressful. Buyers couldn't accurately assess properties remotely, price negotiations lacked data-driven insights, and communication between agents, buyers, and sellers was fragmented across emails, calls, and texts.",
-    solution:
-      "UrbanNest brings transparency to real estate with immersive 3D virtual tours, an AI valuation engine trained on historical market data, and a centralized communication hub. Smart matching connects buyers with properties that fit their lifestyle, not just their budget. The agent dashboard streamlines the entire transaction lifecycle.",
-    thumbnailUrl: "/images/projects/urbannest-thumb.webp",
-    bannerUrl: "/images/projects/urbannest-banner.webp",
-    screenshots: [
-      "/images/projects/urbannest-1.webp",
-      "/images/projects/urbannest-2.webp",
-      "/images/projects/urbannest-3.webp",
-    ],
-    techStack: [
       "React",
+      "TypeScript",
       "Node.js",
-      "Three.js",
-      "MongoDB",
-      "Elasticsearch",
-      "GCP",
+      "NestJS",
+      "PostgreSQL",
+      "Redis",
+      "BullMQ",
+      "OpenAI API",
+      "Tailwind CSS",
+      "Socket.IO",
+      "AWS S3",
+      "Docker",
     ],
-    clientName: "UrbanNest Realty",
-    timeline: "10 months",
+
+    clientName: "Internal Product Concept",
+
+    timeline: "4 Months",
+
     results:
-      "2K+ properties listed, 30% faster transaction completion, 4.9★ customer rating.",
+      "Reduced manual lead management effort by 65% through workflow automation and AI-assisted communication. Improved average customer response time from hours to minutes using automated WhatsApp and email follow-ups. Designed with scalable multi-tenant architecture capable of supporting multiple organizations within a single platform.",
+
     featured: true,
-    publishedAt: "2024-12-01",
+
+    publishedAt: "2026-05-16",
   },
 ];

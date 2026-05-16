@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProjectBySlug, getProjectSlugs } from '@/lib/api';
 import { Badge } from '@/components/atoms/badge';
@@ -43,9 +44,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <img src={project.bannerUrl} alt={project.title} className={styles.bannerImage} />
         <div className={styles.heroOverlay} />
 
-        <a href="/projects" className={styles.backCircle} aria-label="Back to Projects">
+        <Link href="/projects" className={styles.backCircle} aria-label="Back to Projects">
           ←
-        </a>
+        </Link>
 
         <div className={cn('container', styles.heroContent)}>
           <Heading as="h1" size="display" className={styles.heroTitle}>{project.title}</Heading>
