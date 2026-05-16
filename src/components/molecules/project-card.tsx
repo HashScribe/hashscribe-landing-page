@@ -1,7 +1,8 @@
-import Link from 'next/link';
-import { Badge } from '@/components/atoms/badge';
-import type { Project } from '@/types/project';
-import styles from './project-card.module.css';
+import Link from "next/link";
+import { Badge } from "@/components/atoms/badge";
+import type { Project } from "@/types/project";
+import styles from "./project-card.module.css";
+import Image from "next/image";
 
 interface ProjectCardProps {
   project: Project;
@@ -15,7 +16,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
           className={styles.image}
           style={{ backgroundColor: getProjectColor(project.id) }}
         >
-          <span className={styles.imagePlaceholder}>{project.title.charAt(0)}</span>
+          {/* <span className={styles.imagePlaceholder}>{project.title.charAt(0)}</span> */}
+          <Image
+            src={project.thumbnailUrl}
+            width={1000}
+            height={500}
+            alt="Picture of the author"
+            style={{ objectFit: "cover" }}
+          />
         </div>
         <div className={styles.overlay}>
           <span className={styles.viewProject}>
@@ -31,7 +39,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <p className={styles.description}>{project.description}</p>
         <div className={styles.techStack}>
           {project.techStack.slice(0, 4).map((tech) => (
-            <Badge key={tech} variant="default">{tech}</Badge>
+            <Badge key={tech} variant="default">
+              {tech}
+            </Badge>
           ))}
           {project.techStack.length > 4 && (
             <Badge variant="outline">+{project.techStack.length - 4}</Badge>
@@ -44,12 +54,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
 function getProjectColor(id: number): string {
   const colors = [
-    'linear-gradient(135deg, #1a1a2e, #16213e)',
-    'linear-gradient(135deg, #0f3460, #1a1a2e)',
-    'linear-gradient(135deg, #1a1a2e, #2d1b3d)',
-    'linear-gradient(135deg, #162447, #1a1a2e)',
-    'linear-gradient(135deg, #1b2838, #1a1a2e)',
-    'linear-gradient(135deg, #1a1a2e, #1b3a2d)',
+    "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "linear-gradient(135deg, #0f3460, #1a1a2e)",
+    "linear-gradient(135deg, #1a1a2e, #2d1b3d)",
+    "linear-gradient(135deg, #162447, #1a1a2e)",
+    "linear-gradient(135deg, #1b2838, #1a1a2e)",
+    "linear-gradient(135deg, #1a1a2e, #1b3a2d)",
   ];
   return colors[(id - 1) % colors.length];
 }
