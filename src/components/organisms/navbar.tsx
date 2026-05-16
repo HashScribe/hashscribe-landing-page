@@ -1,39 +1,48 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Logo } from '@/components/atoms/logo';
-import { Button } from '@/components/atoms/button';
-import { NavLink } from '@/components/molecules/nav-link';
-import styles from './navbar.module.css';
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { Logo } from "@/components/atoms/logo";
+import { Button } from "@/components/atoms/button";
+import { NavLink } from "@/components/molecules/nav-link";
+import styles from "./navbar.module.css";
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isProjectDetail = pathname.startsWith("/projects/");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (isMobileOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isMobileOpen]);
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header
+      className={`${styles.header} ${isProjectDetail ? styles.overMedia : ""} ${
+        isScrolled ? styles.scrolled : ""
+      }`}
+    >
       <nav className={`${styles.nav} container`}>
         <Logo />
 
@@ -52,7 +61,9 @@ export function Navbar() {
         </div>
 
         <button
-          className={`${styles.hamburger} ${isMobileOpen ? styles.hamburgerOpen : ''}`}
+          className={`${styles.hamburger} ${
+            isMobileOpen ? styles.hamburgerOpen : ""
+          }`}
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-label="Toggle menu"
           aria-expanded={isMobileOpen}
@@ -64,10 +75,18 @@ export function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`${styles.mobileMenu} ${isMobileOpen ? styles.mobileMenuOpen : ''}`}>
+      <div
+        className={`${styles.mobileMenu} ${
+          isMobileOpen ? styles.mobileMenuOpen : ""
+        }`}
+      >
         <div className={styles.mobileLinks}>
           {navItems.map((item) => (
-            <NavLink key={item.href} href={item.href} onClick={() => setIsMobileOpen(false)}>
+            <NavLink
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsMobileOpen(false)}
+            >
               {item.label}
             </NavLink>
           ))}
