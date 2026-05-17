@@ -9,6 +9,7 @@ import styles from "./contact-form.module.css";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,8 +20,10 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (loading) return;
 
     try {
+      setLoading(true);
       const response = await fetch("https://formspree.io/f/mvzypbnr", {
         method: "POST",
         headers: {
@@ -45,6 +48,8 @@ export function ContactForm() {
       }
     } catch (error) {
       alert("Failed to send message.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -122,10 +127,11 @@ export function ContactForm() {
             }
           >
             <option value="">Select a range</option>
+            <option value="under-1k">Under $1,000</option>
+            <option value="1k-3k">$1,000 — $3,000</option>
+            <option value="3k-5k">$3,000 — $5,000</option>
             <option value="5k-10k">$5,000 — $10,000</option>
-            <option value="10k-25k">$10,000 — $25,000</option>
-            <option value="25k-50k">$25,000 — $50,000</option>
-            <option value="50k+">$50,000+</option>
+            <option value="10k+">$10,000+</option>
           </select>
         </div>
       </div>
@@ -138,8 +144,8 @@ export function ContactForm() {
         value={formData.message}
         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
       />
-      <Button variant="primary" size="lg" type="submit">
-        Send Message →
+      <Button variant="primary" size="lg" type="submit" disabled={loading}>
+        {loading ? "Sending..." : "Send Message →"}
       </Button>
     </form>
   );
