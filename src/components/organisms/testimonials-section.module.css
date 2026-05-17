@@ -10,12 +10,14 @@
 .scrollContainer {
   overflow-x: auto;
   padding-bottom: var(--space-4);
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: var(--color-bg-tertiary) transparent;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .scrollContainer::-webkit-scrollbar {
-  height: 6px;
+  height: none;
 }
 
 .scrollContainer::-webkit-scrollbar-track {
