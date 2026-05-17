@@ -6,28 +6,40 @@ import { techStack } from '@/data/tech-stack';
 import styles from './tech-stack-section.module.css';
 
 export function TechStackSection() {
-  const doubled = [...techStack, ...techStack];
-
   return (
-    <SectionWrapper id="tech-stack">
+    <SectionWrapper id="tech-stack" className={styles.section}>
       <div className={styles.header}>
-        <span className="eyebrow">Tech Stack</span>
+        <span className="eyebrow">Platforms</span>
         <Heading as="h2" size="h2">
-          Technologies We <span className="gradient-text">Master</span>
+          Platforms We <span className="gradient-text">Build With</span>
         </Heading>
       </div>
       <div className={styles.marqueeWrapper}>
         <div className={styles.marquee}>
-          {doubled.map((tech, i) => (
-            <TechBadge key={`${tech.name}-${i}`} name={tech.name} icon={tech.icon} />
-          ))}
+          <div className={styles.marqueeGroup}>
+            {techStack.map((tech) => (
+              <TechBadge key={tech.name} name={tech.name} logoSrc={tech.logoSrc} wide={tech.wide} />
+            ))}
+          </div>
+          <div className={styles.marqueeGroup} aria-hidden="true">
+            {techStack.map((tech) => (
+              <TechBadge key={`${tech.name}-copy`} name={tech.name} logoSrc={tech.logoSrc} wide={tech.wide} />
+            ))}
+          </div>
         </div>
       </div>
       <div className={styles.marqueeWrapper}>
         <div className={`${styles.marquee} ${styles.marqueeReverse}`}>
-          {[...doubled].reverse().map((tech, i) => (
-            <TechBadge key={`${tech.name}-rev-${i}`} name={tech.name} icon={tech.icon} />
-          ))}
+          <div className={styles.marqueeGroup}>
+            {[...techStack].reverse().map((tech) => (
+              <TechBadge key={`${tech.name}-reverse`} name={tech.name} logoSrc={tech.logoSrc} wide={tech.wide} />
+            ))}
+          </div>
+          <div className={styles.marqueeGroup} aria-hidden="true">
+            {[...techStack].reverse().map((tech) => (
+              <TechBadge key={`${tech.name}-reverse-copy`} name={tech.name} logoSrc={tech.logoSrc} wide={tech.wide} />
+            ))}
+          </div>
         </div>
       </div>
     </SectionWrapper>

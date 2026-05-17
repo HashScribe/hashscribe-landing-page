@@ -103,7 +103,7 @@
   --container-max: 1280px;
   --container-padding: var(--space-5);
   --navbar-height: 72px;
-  --section-gap: var(--space-10);
+  --section-gap: var(--space-9);
 }
 
 @media (max-width: 768px) {

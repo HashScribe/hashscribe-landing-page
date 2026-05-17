@@ -1,27 +1,63 @@
 .badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: var(--space-3);
-  padding: var(--space-3) var(--space-5);
-  background: var(--color-bg-secondary);
+  justify-content: center;
+  width: 132px;
+  height: 76px;
+  padding: var(--space-4);
+  background: rgba(255, 255, 255, 0.035);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  white-space: nowrap;
-  transition: all var(--duration-normal);
+  transition: background var(--duration-normal), border-color var(--duration-normal), transform var(--duration-normal);
 }
 
 .badge:hover {
   border-color: var(--color-border-hover);
-  background: var(--color-bg-tertiary);
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-2px);
 }
 
-.icon {
-  font-size: 1.25rem;
-  line-height: 1;
+.wide {
+  width: 176px;
 }
 
-.name {
-  font-size: var(--text-body-sm);
-  font-weight: 500;
-  color: var(--color-text-secondary);
+.logo {
+  width: 100%;
+  max-width: 96px;
+  height: 42px;
+  object-fit: contain;
+  opacity: 0.78;
+  transition: opacity var(--duration-normal), transform var(--duration-normal);
+}
+
+.wide .logo {
+  max-width: 156px;
+}
+
+.badge:hover .logo {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+@media (max-width: 640px) {
+  .badge {
+    width: 112px;
+    height: 64px;
+    padding: var(--space-3);
+  }
+
+  .wide {
+    width: 148px;
+  }
+
+  .logo {
+    height: 34px;
+    max-width: 82px;
+  }
+
+  .wide .logo {
+    max-width: 128px;
+  }
 }

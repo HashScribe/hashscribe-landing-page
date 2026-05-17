@@ -61,6 +61,7 @@
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  
 }
 
 .successIcon {
@@ -76,8 +77,13 @@
   font-weight: 700;
 }
 
+
+
 @media (max-width: 640px) {
   .row {
     grid-template-columns: 1fr;
+  }
+  .success {
+    padding: var(--space-4);
   }
 }

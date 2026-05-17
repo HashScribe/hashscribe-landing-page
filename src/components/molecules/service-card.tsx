@@ -1,8 +1,8 @@
-import { Icon } from '@/components/atoms/icon';
-import { Heading } from '@/components/atoms/heading';
-import { Text } from '@/components/atoms/text';
-import type { Service } from '@/types/service';
-import styles from './service-card.module.css';
+import { Icon } from "@/components/atoms/icon";
+import { Heading } from "@/components/atoms/heading";
+import { Text } from "@/components/atoms/text";
+import type { Service } from "@/types/service";
+import styles from "./service-card.module.css";
 
 interface ServiceCardProps {
   service: Service;
@@ -11,9 +11,6 @@ interface ServiceCardProps {
 export function ServiceCard({ service }: ServiceCardProps) {
   return (
     <div className={styles.card}>
-      <div className={styles.iconWrapper}>
-        <Icon name={service.icon} size="lg" />
-      </div>
       <Heading as="h3" size="h4" className={styles.title}>
         {service.title}
       </Heading>

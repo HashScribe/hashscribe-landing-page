@@ -33,17 +33,6 @@
   opacity: 1;
 }
 
-.iconWrapper {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-primary-muted);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(252, 57, 64, 0.15);
-}
-
 .title {
   margin: 0;
 }

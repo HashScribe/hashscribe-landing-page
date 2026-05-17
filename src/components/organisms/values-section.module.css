@@ -29,15 +29,6 @@
   transform: translateY(-2px);
 }
 
-.iconWrapper {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-primary-muted);
-  border-radius: var(--radius-md);
-}
 
 .title {
   font-family: var(--font-heading);
