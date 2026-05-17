@@ -44,6 +44,6 @@ export async function getTeamMembers(): Promise<TeamMember[]> {
   return teamMembers;
 }
 
-export async function getTechStack(): Promise<{ name: string; icon: string; category: string }[]> {
+export async function getTechStack(): Promise<{ name: string; logoSrc: string; category: string; wide?: boolean }[]> {
   return techStack;
 }

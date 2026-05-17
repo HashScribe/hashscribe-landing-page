@@ -33,7 +33,7 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper>
+      <SectionWrapper className={styles.storySection}>
         <div className={styles.storyGrid}>
           <div className={styles.storyLeft}>
             <span className="eyebrow">Our Story</span>
